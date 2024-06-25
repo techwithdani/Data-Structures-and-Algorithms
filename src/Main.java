@@ -1,20 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        // Reverse the String
+       String message = "Stay Hard!";
 
-        boolean isSorted = true;
+       StringBuilder newString = new StringBuilder();
 
-        for (int i = 0; i < numbers.length - 1; i++) {
-            if (numbers[i] > numbers[i + 1]) {
-                isSorted = false;
-                break;
-            }
-        }
+       for (int i = message.length() - 1; i >= 0; i--) {
+           char addChar = message.charAt(i);
+           newString.append(addChar);
+       }
 
-        if (isSorted) {
-            System.out.println("Sorted");
-        } else {
-            System.out.println("Not sorted");
-        }
+        System.out.println(newString);
     }
 }
