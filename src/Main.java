@@ -1,15 +1,35 @@
 public class Main {
     public static void main(String[] args) {
-        // Reverse the String
-       String message = "Stay Hard!";
+        String check1 = "YOOOOOY";
+        String check2 = "tatakae";
+        String check3 = "YEEEAEEEY";
+        String check4 = "messi";
 
-       StringBuilder newString = new StringBuilder();
+        boolean result1 = checkPalindrome(check1);
+        boolean result2 = checkPalindrome(check2);
+        boolean result3 = checkPalindrome(check3);
+        boolean result4 = checkPalindrome(check4);
 
-       for (int i = message.length() - 1; i >= 0; i--) {
-           char addChar = message.charAt(i);
-           newString.append(addChar);
-       }
+        System.out.println(result1);
+        System.out.println(result2);
+        System.out.println(result3);
+        System.out.println(result4);
 
-        System.out.println(newString);
+    }
+
+    public static Boolean checkPalindrome(String randomString) {
+        int left = 0;
+        int right = randomString.length() - 1;
+
+        while (left < right) {
+            if (randomString.charAt(left) != randomString.charAt(right)) {
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
     }
 }
